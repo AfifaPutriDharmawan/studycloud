@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Cloud - Profil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .profile-header {
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+        .stats-card {
+            transition: transform 0.3s;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/CC_Study Cloud.jpg" alt="Study Cloud Logo" height="30" class="d-inline-block align-top me-2">
+                <strong>Study Cloud</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-tasks.html"><i class="bi bi-list-task me-1"></i> Tugas</a>
+                    </li>
+                </ul>
+                
+                <!-- Menu Login/Register -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i> Akun
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <div class="dropdown-header px-3 py-2">
+                                    <h6 class="mb-0">Masuk atau Daftar</h6>
+                                    <small class="text-muted">Akses semua fitur Study Cloud</small>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="login.html" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="register.html" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                    <i class="bi bi-person-plus me-2"></i> Register
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="bantuan.html">
+                                    <i class="bi bi-question-circle me-2"></i> Bantuan
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="loginModalLabel">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Login ke Study Cloud
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="email@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Masukkan password" required>
+                            <div class="form-text">
+                                <a href="#" class="text-decoration-none">Lupa password?</a>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Ingat saya</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <p class="mb-2">Atau login dengan:</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-outline-primary">
+                                <i class="bi bi-google"></i> Google
+                            </button>
+                            <button class="btn btn-outline-primary">
+                                <i class="bi bi-facebook"></i> Facebook
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p class="mb-0">Belum punya akun? 
+                        <a href="#" class="text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Daftar sekarang</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="registerModalLabel">
+                        <i class="bi bi-person-plus me-2"></i> Buat Akun Baru
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">Nama Depan</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Nama Belakang</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="registerEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="registerEmail" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="registerPassword" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="confirmPassword" class="form-label">Konfirmasi Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="university" class="form-label">Universitas</label>
+                                <select class="form-select" id="university">
+                                    <option selected disabled>Pilih Universitas</option>
+                                    <option>STT Terpadu Nurul Fikri</option>
+                                    <option>Universitas Indonesia</option>
+                                    <option>Institut Teknologi Bandung</option>
+                                    <option>Universitas Gadjah Mada</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        Saya menyetujui <a href="#" class="text-decoration-none">Syarat dan Ketentuan</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-3">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-person-plus me-1"></i> Daftar
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p class="mb-0">Sudah punya akun? 
+                        <a href="#" class="text-success text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login disini</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <div class="container text-center">
+            <img src="https://ui-avatars.com/api/?name=Afifa+Putri&background=fff&color=4e73df&size=150" alt="Profile" class="profile-img rounded-circle mb-3">
+            <h1 class="fw-bold">Afifa Putri Dharmawan</h1>
+            <p class="lead mb-0">Mahasiswa Sistem Informasi - STT Terpadu Nurul Fikri</p>
+        </div>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://ui-avatars.com/api/?name=Afifa+Putri&background=4e73df&color=fff&size=150" alt="Profile" class="rounded-circle mb-3" width="100">
+                        <h5 class="card-title">Afifa Putri Dharmawan</h5>
+                        <p class="card-text text-muted">Mahasiswa Sistem Informasi</p>
+                        
+                        <hr>
+                        
+                        <div class="text-start">
+                            <p><i class="bi bi-envelope-fill me-2"></i> afifa@student.nurulfikri.ac.id</p>
+                            <p><i class="bi bi-telephone-fill me-2"></i> +62 812 3456 7890</p>
+                            <p><i class="bi bi-geo-alt-fill me-2"></i> Depok, Jawa Barat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-info-circle-fill me-2"></i> Informasi Profil
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="fullName" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="fullName" value="Afifa Putri Dharmawan">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nim" class="form-label">NIM</label>
+                                    <input type="text" class="form-control" id="nim" value="123456789" disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" value="afifa@student.nurulfikri.ac.id">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">No. Telepon</label>
+                                    <input type="tel" class="form-control" id="phone" value="081234567890">
+                                </div>
+                                <div class="col-12">
+                                    <label for="university" class="form-label">Universitas</label>
+                                    <input type="text" class="form-control" id="university" value="STT Terpadu Nurul Fikri" disabled>
+                                </div>
+                                <div class="col-12">
+                                    <label for="bio" class="form-label">Bio</label>
+                                    <textarea class="form-control" id="bio" rows="3">Saya adalah mahasiswa Sistem Informasi semester 4 yang tertarik dengan pengembangan web dan basis data.</textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4">
+                        <div class="card stats-card h-100">
+                            <div class="card-body text-center">
+                                <h2 class="text-primary">14</h2>
+                                <p class="mb-0">Total Tugas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card stats-card h-100">
+                            <div class="card-body text-center">
+                                <h2 class="text-success">8</h2>
+                                <p class="mb-0">Tugas Selesai</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card stats-card h-100">
+                            <div class="card-body text-center">
+                                <h2 class="text-warning">3</h2>
+                                <p class="mb-0">Deadline Dekat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login berhasil!');
+            // Simpan login state dan redirect
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'profile.html';
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pendaftaran berhasil! Silakan login.');
+            // Tutup modal register dan buka modal login
+            var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+            registerModal.hide();
+            
+            var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+            loginModal.show();
+        });
+
+        // Validasi password
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('registerPassword').value;
+            const confirmPass = this.value;
+            
+            if (password !== confirmPass) {
+                this.setCustomValidity('Password tidak cocok');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    </script>
+</body>
+</html>

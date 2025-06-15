@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Cloud - Tambah Mata Kuliah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .course-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .color-option.selected {
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo_Study Cloud.jpg" alt="Study Cloud Logo" height="30" class="d-inline-block align-top me-2">
+                <strong>Study Cloud</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-tasks.html"><i class="bi bi-list-task me-1"></i> Tugas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="all-courses.html"><i class="bi bi-journal-bookmark me-1"></i> Mata Kuliah</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card course-card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="bi bi-plus-circle me-2"></i> Tambah Mata Kuliah Baru</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="addCourseForm">
+                            <div class="mb-4">
+                                <label for="courseName" class="form-label fw-bold">Nama Mata Kuliah</label>
+                                <input type="text" class="form-control form-control-lg" id="courseName" placeholder="Contoh: Sistem Basis Data" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="courseCode" class="form-label fw-bold">Kode Mata Kuliah</label>
+                                <input type="text" class="form-control" id="courseCode" placeholder="Contoh: SBD501">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="lecturerName" class="form-label fw-bold">Nama Dosen</label>
+                                <input type="text" class="form-control" id="lecturerName" placeholder="Nama lengkap dosen">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Warna Mata Kuliah</label>
+                                <div class="d-flex gap-3">
+                                    <div class="color-option bg-primary selected" data-color="#4e73df"></div>
+                                    <div class="color-option bg-success" data-color="#1cc88a"></div>
+                                    <div class="color-option bg-info" data-color="#36b9cc"></div>
+                                    <div class="color-option bg-warning" data-color="#f6c23e"></div>
+                                    <div class="color-option bg-danger" data-color="#e74a3b"></div>
+                                    <div class="color-option bg-secondary" data-color="#858796"></div>
+                                </div>
+                                <input type="hidden" id="selectedColor" value="#4e73df">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="courseSchedule" class="form-label fw-bold">Jadwal Kuliah</label>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <select class="form-select" id="courseDay">
+                                            <option value="" selected disabled>Hari</option>
+                                            <option value="Senin">Senin</option>
+                                            <option value="Selasa">Selasa</option>
+                                            <option value="Rabu">Rabu</option>
+                                            <option value="Kamis">Kamis</option>
+                                            <option value="Jumat">Jumat</option>
+                                            <option value="Sabtu">Sabtu</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="time" class="form-control" id="startTime" placeholder="Mulai">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="time" class="form-control" id="endTime" placeholder="Selesai">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="courseDescription" class="form-label fw-bold">Deskripsi Mata Kuliah</label>
+                                <textarea class="form-control" id="courseDescription" rows="3" placeholder="Deskripsi singkat mata kuliah ini..."></textarea>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="all-courses.html" class="btn btn-outline-secondary me-md-2">Batal</a>
+                                <button type="submit" class="btn btn-primary">Simpan Mata Kuliah</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Study Cloud. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Color selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('selectedColor').value = this.getAttribute('data-color');
+            });
+        });
+
+        // Form submission
+        document.getElementById('addCourseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const courseName = document.getElementById('courseName').value;
+            if (!courseName) {
+                alert('Nama mata kuliah harus diisi!');
+                return;
+            }
+            
+            alert(`Mata kuliah "${courseName}" berhasil ditambahkan!`);
+            window.location.href = 'all-courses.html';
+        });
+    </script>
+</body>
+</html>

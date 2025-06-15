@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Cloud - Buat Kelompok Baru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fc;
+        }
+        .group-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: none;
+        }
+        .member-avatar {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+        .search-box {
+            position: relative;
+        }
+        .search-box i {
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            color: #6c757d;
+        }
+        .search-input {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/CC_Study Cloud.jpg" alt="Study Cloud Logo" height="30" class="d-inline-block align-top me-2">
+                <strong>Study Cloud</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="detail_kelompok.html"><i class="bi bi-people-fill me-1"></i> Kelompok</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card group-card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="bi bi-plus-circle me-2"></i> Buat Kelompok Baru</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="createGroupForm">
+                            <div class="mb-4">
+                                <label for="groupName" class="form-label fw-bold">Nama Kelompok</label>
+                                <input type="text" class="form-control form-control-lg" id="groupName" placeholder="Contoh: Kelompok Basis Data 01" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="courseSelect" class="form-label fw-bold">Mata Kuliah</label>
+                                <select class="form-select form-select-lg" id="courseSelect" required>
+                                    <option value="" selected disabled>Pilih Mata Kuliah</option>
+                                    <option value="sbd">Sistem Basis Data</option>
+                                    <option value="pw">Pemrograman Web</option>
+                                    <option value="jk">Jaringan Komputer</option>
+                                    <option value="pm">Pemrograman Mobile</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Tambahkan Anggota</label>
+                                <div class="search-box mb-3">
+                                    <i class="bi bi-search"></i>
+                                    <input type="text" class="form-control search-input" id="searchMember" placeholder="Cari nama atau NIM...">
+                                </div>
+                                
+                                <div class="border rounded p-3 mb-3" style="max-height: 200px; overflow-y: auto;">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="member1" checked>
+                                        <label class="form-check-label d-flex align-items-center" for="member1">
+                                            <img src="https://ui-avatars.com/api/?name=Deli+Sartika&background=1cc88a&color=fff" class="member-avatar rounded-circle me-2">
+                                            Deli Sartika (NIM: 123456)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="member2" checked>
+                                        <label class="form-check-label d-flex align-items-center" for="member2">
+                                            <img src="https://ui-avatars.com/api/?name=Zahra+Alya&background=e74a3b&color=fff" class="member-avatar rounded-circle me-2">
+                                            Zahra Alya (NIM: 123457)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="member3">
+                                        <label class="form-check-label d-flex align-items-center" for="member3">
+                                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=f6c23e&color=fff" class="member-avatar rounded-circle me-2">
+                                            Budi Santoso (NIM: 123458)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="member4">
+                                        <label class="form-check-label d-flex align-items-center" for="member4">
+                                            <img src="https://ui-avatars.com/api/?name=Rina+Wulandari&background=36b9cc&color=fff" class="member-avatar rounded-circle me-2">
+                                            Rina Wulandari (NIM: 123459)
+                                        </label>
+                                    </div>
+                                </div>
+                                <small class="text-muted">Pilih minimal 1 anggota kelompok</small>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="groupDescription" class="form-label fw-bold">Deskripsi Kelompok</label>
+                                <textarea class="form-control" id="groupDescription" rows="3" placeholder="Tulis deskripsi singkat tentang kelompok ini..."></textarea>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="all-groups.html" class="btn btn-outline-secondary me-md-2">Batal</a>
+                                <button type="submit" class="btn btn-primary">Buat Kelompok</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Study Cloud</h5>
+                    <p>Aplikasi manajemen tugas untuk mahasiswa.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Beranda</a></li>
+                        <li><a href="all-tasks.html" class="text-white text-decoration-none">Tugas</a></li>
+                        <li><a href="all-groups.html" class="text-white text-decoration-none">Kelompok</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kontak</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i> info@studycloud.ac.id</li>
+                        <li><i class="bi bi-telephone me-2"></i> +62 123 4567 890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Study Cloud. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('createGroupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ambil data form
+            const groupName = document.getElementById('groupName').value;
+            const course = document.getElementById('courseSelect').value;
+            
+            // Validasi
+            if (!groupName || !course) {
+                alert('Nama kelompok dan mata kuliah harus diisi!');
+                return;
+            }
+            
+            // Simulasi pembuatan kelompok (bisa diganti dengan fetch API)
+            alert(`Kelompok "${groupName}" berhasil dibuat!`);
+            window.location.href = 'group-detail.html?id=new-group';
+        });
+
+        // Fungsi pencarian anggota
+        document.getElementById('searchMember').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const checkboxes = document.querySelectorAll('.form-check');
+            
+            checkboxes.forEach(checkbox => {
+                const label = checkbox.querySelector('.form-check-label').textContent.toLowerCase();
+                if (label.includes(searchTerm)) {
+                    checkbox.style.display = 'block';
+                } else {
+                    checkbox.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

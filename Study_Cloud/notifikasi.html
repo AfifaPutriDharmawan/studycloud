@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Cloud - Notifikasi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Navbar (Sama seperti index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/CC_Study Cloud.jpg Cloud.jpg" alt="Study Cloud Logo" height="30" class="d-inline-block align-top me-2">
+                <strong>Study Cloud</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+                    </li
+                    <li class="nav-item">
+                        <a class="nav-link active" href="detail_kelompok.html"><i class="bi bi-people-fill me-1"></i> Kelompok</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">Notifikasi</h2>
+            <button class="btn btn-sm btn-outline-secondary">Tandai Sudah Dibaca</button>
+        </div>
+
+        <div class="list-group">
+            <a href="task-detail.html?id=1" class="list-group-item list-group-item-action">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 me-3">
+                        <i class="bi bi-exclamation-triangle-fill text-danger fs-4"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Deadline tugas Pemrograman Web besok!</h6>
+                        <small class="text-muted">Hari Ini, 10:42</small>
+                    </div>
+                </div>
+            </a>
+            <a href="group-detail.html?id=2" class="list-group-item list-group-item-action">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 me-3">
+                        <i class="bi bi-people-fill text-primary fs-4"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Zahra mengunggah dokumen baru di kelompok Basis Data</h6>
+                        <small class="text-muted">Kemarin, 14:30</small>
+                    </div>
+                </div>
+            </a>
+            <!-- Notifikasi lainnya -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
