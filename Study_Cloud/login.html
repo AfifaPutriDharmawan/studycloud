@@ -11,18 +11,16 @@
             background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
             min-height: 100vh;
             display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 20px 0;
-        }
-        .login-container {
-            max-width: 450px;
-            width: 100%;
-            margin: 0 auto;
+            margin: 0;
+            padding: 20px;
         }
         .login-card {
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
+            width: 100%;
+            max-width: 450px;
         }
         .card-body {
             padding: 2.5rem;
@@ -31,7 +29,7 @@
             background: #4e73df;
             color: white;
             transition: all 0.3s;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem;
         }
         .btn-login:hover {
             background: #3a5fcc;
@@ -43,7 +41,7 @@
         }
         @media (max-width: 576px) {
             .card-body {
-                padding: 1.5rem;
+                padding: 1.75rem;
             }
             body {
                 padding: 15px;
@@ -52,32 +50,30 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="card login-card">
-            <div class="card-body">
-                <div class="text-center mb-4">
-                    <img src="assets/CC_Study Cloud.jpg" alt="Study Cloud Logo" width="80" class="mb-3">
-                    <h3 class="fw-bold">Masuk ke Study Cloud</h3>
-                    <p class="text-muted">Kelola tugas kuliah dengan lebih mudah</p>
-                </div>
-                <form id="loginForm">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="nama@email.com" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
-                    </div>
-                    <div class="d-grid mb-3">
-                        <button type="submit" class="btn btn-login btn-lg">Masuk</button>
-                    </div>
-                    <div class="text-center">
-                        <p class="mb-0">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
-                        <p><a href="forgot-password.html">Lupa password?</a></p>
-                    </div>
-                </form>
+    <div class="login-card card">
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <img src="assets/CC_Study Cloud.jpg" alt="Study Cloud Logo" width="80" class="mb-3">
+                <h3 class="fw-bold">Masuk ke Study Cloud</h3>
+                <p class="text-muted">Kelola tugas kuliah dengan lebih mudah</p>
             </div>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="nama@email.com" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                </div>
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-login btn-lg">Masuk</button>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+                    <p><a href="forgot-password.html">Lupa password?</a></p>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -88,7 +84,6 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // Simulasi login (bisa diganti dengan fetch API)
             if (email && password) {
                 alert('Login berhasil! Mengarahkan ke dashboard...');
                 window.location.href = 'index.html';
